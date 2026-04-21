@@ -5,17 +5,19 @@ import { PageHeader } from "@/components/PageHeader";
 export const Route = createFileRoute("/cooperation")({
   head: () => ({
     meta: [
-      { title: "Сотрудничество — Поддоны.dp" },
+      { title: "Співпраця — Піддони.dp" },
       {
         name: "description",
         content:
-          "Открытые вакансии и B2B-партнёрство. Ремонт деревянных поддонов в Днепре, оптовые поставки.",
+          "Відкриті вакансії та B2B-партнерство. Ремонт дерев'яних піддонів у Дніпрі, оптові постачання.",
       },
-      { property: "og:title", content: "Сотрудничество — Поддоны.dp" },
+      { property: "og:title", content: "Співпраця — Піддони.dp" },
       {
         property: "og:description",
-        content: "Присоединяйтесь к нашей команде или станьте оптовым партнёром.",
+        content: "Приєднуйтесь до нашої команди або станьте оптовим партнером.",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
   component: CooperationPage,
@@ -24,23 +26,23 @@ export const Route = createFileRoute("/cooperation")({
 const perks = [
   {
     icon: Wallet,
-    title: "Достойная оплата",
-    text: "Сдельная и стабильная оплата труда — еженедельно или по согласованию.",
+    title: "Гідна оплата",
+    text: "Відрядна та стабільна оплата праці — щотижня або за домовленістю.",
   },
   {
     icon: Clock,
-    title: "Гибкий график",
-    text: "Удобное рабочее время, возможна полная или частичная занятость.",
+    title: "Гнучкий графік",
+    text: "Зручний робочий час, можлива повна або часткова зайнятість.",
   },
   {
     icon: Users,
-    title: "Дружный коллектив",
-    text: "Опытные мастера, поддержка и обучение для новичков.",
+    title: "Дружний колектив",
+    text: "Досвідчені майстри, підтримка та навчання для новачків.",
   },
   {
     icon: Hammer,
-    title: "Все инструменты",
-    text: "Оборудование и расходники предоставляем — приходите и работайте.",
+    title: "Усі інструменти",
+    text: "Обладнання та витратні матеріали надаємо — приходьте і працюйте.",
   },
 ];
 
@@ -48,42 +50,42 @@ function CooperationPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Сотрудничество"
+        eyebrow="Співпраця"
         title={
           <>
-            Присоединяйтесь к <span className="italic-display">нашей команде</span>
+            Приєднуйтесь до <span className="italic-display">нашої команди</span>
           </>
         }
-        description="Мы расширяем производство и приглашаем мастеров, которым близка работа с деревом."
+        description="Ми розширюємо виробництво і запрошуємо майстрів, яким близька робота з деревом."
       />
 
       <section className="pb-20">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12">
           {/* Vacancy */}
           <div>
-            <div className="eyebrow mb-5">Открытая вакансия</div>
+            <div className="eyebrow mb-5">Відкрита вакансія</div>
             <h2 className="font-display text-4xl md:text-5xl leading-tight mb-6">
-              Мастера по ремонту <span className="italic-display">поддонов</span>
+              Майстри з ремонту <span className="italic-display">піддонів</span>
             </h2>
             <div className="gold-divider mb-8" />
             <p className="text-muted-foreground leading-relaxed mb-5">
-              Производственный участок в Днепре приглашает на постоянную работу рабочих по ремонту и
-              восстановлению деревянных поддонов. Мы ценим аккуратность, ответственность и
-              стремление к качеству.
+              Виробнича дільниця у Дніпрі запрошує на постійну роботу робітників з ремонту та
+              відновлення дерев'яних піддонів. Ми цінуємо акуратність, відповідальність та
+              прагнення до якості.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              Опыт приветствуется, но не обязателен — обучим всему необходимому. Главное — желание
-              работать руками и быть частью стабильной команды.
+              Досвід вітається, але не обов'язковий — навчимо всьому необхідному. Головне — бажання
+              працювати руками і бути частиною стабільної команди.
             </p>
 
             <div className="bg-card border border-border/60 p-8 mb-8">
-              <h3 className="font-display text-xl mb-5">Обязанности</h3>
+              <h3 className="font-display text-xl mb-5">Обов'язки</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 {[
-                  "Сортировка поступающих поддонов",
-                  "Замена повреждённых досок и блоков",
-                  "Сборка и укрепление конструкции",
-                  "Поддержание порядка на рабочем месте",
+                  "Сортування піддонів, що надходять",
+                  "Заміна пошкоджених дощок і блоків",
+                  "Збірка та укріплення конструкції",
+                  "Підтримання порядку на робочому місці",
                 ].map((d) => (
                   <li key={d} className="flex gap-3">
                     <span className="text-[var(--gold)]">·</span> {d}
@@ -97,13 +99,13 @@ function CooperationPage() {
                 href="tel:+380974922539"
                 className="inline-flex items-center gap-3 px-7 py-3 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase"
               >
-                <Phone size={14} /> Позвонить
+                <Phone size={14} /> Зателефонувати
               </a>
               <Link
                 to="/contacts"
                 className="inline-flex items-center px-7 py-3 border border-[var(--gold)]/60 text-[var(--gold)] text-xs tracking-[0.3em] uppercase hover:bg-[var(--gold)]/10 transition-all"
               >
-                Все контакты
+                Усі контакти
               </Link>
             </div>
           </div>
@@ -129,19 +131,19 @@ function CooperationPage() {
       {/* B2B */}
       <section className="py-24 bg-[var(--gradient-section)] border-t border-border/40">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <div className="eyebrow mb-5">Партнёрам</div>
+          <div className="eyebrow mb-5">Партнерам</div>
           <h2 className="font-display text-4xl md:text-5xl leading-tight mb-8">
-            Оптовые поставки и <span className="italic-display">B2B-партнёрство</span>
+            Оптові постачання та <span className="italic-display">B2B-партнерство</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-            Регулярные отгрузки, индивидуальные условия и приоритетная логистика для торговых сетей,
-            складов и производственных компаний. Свяжитесь с нами — обсудим формат сотрудничества.
+            Регулярні відвантаження, індивідуальні умови та пріоритетна логістика для торговельних
+            мереж, складів і виробничих компаній. Зв'яжіться з нами — обговоримо формат співпраці.
           </p>
           <Link
             to="/contacts"
             className="inline-flex items-center px-9 py-4 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase shadow-[var(--shadow-gold)]"
           >
-            Обсудить партнёрство
+            Обговорити партнерство
           </Link>
         </div>
       </section>

@@ -8,17 +8,19 @@ import bananaImg from "@/assets/product-banana.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Поддоны.dp — Премиум поддоны в Днепре" },
+      { title: "Піддони.dp — Преміум піддони у Дніпрі" },
       {
         name: "description",
         content:
-          "Деревянные поддоны 1200×800 и 1200×1000, пластиковые и банановые ящики. Безупречная репутация с 2015 года.",
+          "Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Бездоганна репутація з 2015 року.",
       },
-      { property: "og:title", content: "Поддоны.dp — Премиум поддоны в Днепре" },
+      { property: "og:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
       {
         property: "og:description",
-        content: "Розничные и оптовые поставки поддонов и ящиков по всей Украине.",
+        content: "Роздрібні та оптові постачання піддонів і ящиків по всій Україні.",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
   component: HomePage,
@@ -27,30 +29,30 @@ export const Route = createFileRoute("/")({
 const advantages = [
   {
     icon: ShieldCheck,
-    title: "Гарантия качества",
-    text: "Строгий отбор и сортировка перед каждой отгрузкой.",
+    title: "Гарантія якості",
+    text: "Суворий відбір і сортування перед кожним відвантаженням.",
   },
   {
     icon: Truck,
-    title: "Доставка по Украине",
-    text: "Работаем по Днепру и всей стране, оперативные сроки.",
+    title: "Доставка по Україні",
+    text: "Працюємо по Дніпру та всій країні, оперативні терміни.",
   },
   {
     icon: Wrench,
-    title: "Ремонт и переработка",
-    text: "Восстанавливаем поддоны, продлеваем срок службы.",
+    title: "Ремонт і переробка",
+    text: "Відновлюємо піддони, продовжуємо термін служби.",
   },
   {
     icon: Package,
-    title: "Розница и опт",
-    text: "Гибкие условия для бизнеса и частных заказов.",
+    title: "Роздріб і опт",
+    text: "Гнучкі умови для бізнесу та приватних замовлень.",
   },
 ];
 
 const products = [
-  { img: euroImg, tag: "EUR / EPAL", title: "Поддон 1200×800" },
-  { img: plasticImg, tag: "Прочные · Гигиеничные", title: "Пластиковые ящики" },
-  { img: bananaImg, tag: "Лёгкие · Вместительные", title: "Банановые ящики" },
+  { img: euroImg, tag: "EUR / EPAL", title: "Піддон 1200×800" },
+  { img: plasticImg, tag: "Міцні · Гігієнічні", title: "Пластикові ящики" },
+  { img: bananaImg, tag: "Легкі · Місткі", title: "Бананові ящики" },
 ];
 
 function HomePage() {
@@ -61,7 +63,7 @@ function HomePage() {
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Премиум склад деревянных поддонов в Днепре"
+            alt="Преміум склад дерев'яних піддонів у Дніпрі"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/40" />
@@ -70,15 +72,15 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-32 w-full">
           <div className="max-w-2xl">
-            <div className="eyebrow mb-8">· Поддоны · Днепр · с 2015 ·</div>
+            <div className="eyebrow mb-8">· Піддони · Дніпро · з 2015 ·</div>
             <h1 className="font-display text-6xl md:text-8xl leading-[1.02] mb-8">
-              Поддоны
+              Піддони
               <br />
-              премиум <span className="italic-display">класса</span>
+              преміум <span className="italic-display">класу</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-              Деревянные поддоны 1200×800 и 1200×1000, пластиковые и банановые ящики. Розничные и
-              оптовые поставки с безупречной репутацией.
+              Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Роздрібні та
+              оптові постачання з бездоганною репутацією.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -92,7 +94,7 @@ function HomePage() {
                 to="/contacts"
                 className="inline-flex items-center px-8 py-4 border border-[var(--gold)]/50 text-[var(--gold)] text-xs tracking-[0.3em] uppercase hover:bg-[var(--gold)]/10 transition-all"
               >
-                Связаться
+                Зв'язатися
               </Link>
             </div>
           </div>
@@ -106,15 +108,15 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-5">
-              <div className="eyebrow mb-6">Почему мы</div>
+              <div className="eyebrow mb-6">Чому ми</div>
               <h2 className="font-display text-4xl md:text-5xl leading-tight">
-                Стабильность, <span className="italic-display">отточенная</span> годами
+                Стабільність, <span className="italic-display">відточена</span> роками
               </h2>
             </div>
             <div className="lg:col-span-6 lg:col-start-7 flex items-center">
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Мы строим долгосрочные отношения с клиентами через качество, точность и внимание к
-                каждой детали поставки.
+                Ми будуємо довгострокові відносини з клієнтами через якість, точність і увагу до
+                кожної деталі постачання.
               </p>
             </div>
           </div>
@@ -143,10 +145,10 @@ function HomePage() {
           <div className="text-center mb-16">
             <div className="eyebrow mb-6">Каталог</div>
             <h2 className="font-display text-4xl md:text-5xl mb-6">
-              Избранная <span className="italic-display">продукция</span>
+              Обрана <span className="italic-display">продукція</span>
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Главные позиции, которые ежедневно выбирают наши клиенты по всей Украине.
+              Головні позиції, які щодня обирають наші клієнти по всій Україні.
             </p>
           </div>
 
@@ -180,7 +182,7 @@ function HomePage() {
               to="/products"
               className="inline-flex items-center gap-3 text-[var(--gold)] text-xs tracking-[0.3em] uppercase border-b border-[var(--gold)]/50 pb-2 hover:border-[var(--gold)]"
             >
-              Смотреть всю продукцию
+              Переглянути всю продукцію
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -194,18 +196,18 @@ function HomePage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-background to-background/80" />
         <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <div className="eyebrow mb-6">Начнём сотрудничество</div>
+          <div className="eyebrow mb-6">Розпочнемо співпрацю</div>
           <h2 className="font-display text-4xl md:text-6xl leading-tight mb-8">
-            Нужны поддоны или ящики <span className="italic-display">уже сегодня?</span>
+            Потрібні піддони чи ящики <span className="italic-display">вже сьогодні?</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
-            Оставьте заявку — рассчитаем стоимость и подготовим отгрузку оперативно.
+            Залиште заявку — розрахуємо вартість і підготуємо відвантаження оперативно.
           </p>
           <Link
             to="/contacts"
             className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase shadow-[var(--shadow-gold)] hover:shadow-lg transition-all"
           >
-            Получить предложение
+            Отримати пропозицію
             <ArrowRight size={16} />
           </Link>
         </div>

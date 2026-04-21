@@ -9,17 +9,19 @@ import bananaImg from "@/assets/product-banana.jpg";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Продукция — Поддоны.dp" },
+      { title: "Продукція — Піддони.dp" },
       {
         name: "description",
         content:
-          "Деревянные поддоны 1200×800 и 1200×1000, пластиковые ящики, банановые ящики. Полный ассортимент.",
+          "Дерев'яні піддони 1200×800 та 1200×1000, пластикові ящики, бананові ящики. Повний асортимент.",
       },
-      { property: "og:title", content: "Продукция — Поддоны.dp" },
+      { property: "og:title", content: "Продукція — Піддони.dp" },
       {
         property: "og:description",
-        content: "Полный ассортимент поддонов и ящиков для логистики, торговли и частных заказов.",
+        content: "Повний асортимент піддонів і ящиків для логістики, торгівлі та приватних замовлень.",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
   component: ProductsPage,
@@ -31,44 +33,44 @@ const products = [
     tag: "EUR · EPAL",
     title: (
       <>
-        Деревянный поддон <span className="italic-display">1200 × 800</span>
+        Дерев'яний піддон <span className="italic-display">1200 × 800</span>
       </>
     ),
-    desc: "Стандарт европейского образца. Идеален для логистики, складов и торговых сетей.",
-    features: ["Грузоподъёмность до 1500 кг", "Сорт 1, 2 и 3", "Новые и б/у в наличии"],
+    desc: "Стандарт європейського зразка. Ідеальний для логістики, складів і торговельних мереж.",
+    features: ["Вантажопідйомність до 1500 кг", "Сорт 1, 2 і 3", "Нові та б/в в наявності"],
   },
   {
     img: finImg,
-    tag: "FIN · промышленный",
+    tag: "FIN · промисловий",
     title: (
       <>
-        Деревянный поддон <span className="italic-display">1200 × 1000</span>
+        Дерев'яний піддон <span className="italic-display">1200 × 1000</span>
       </>
     ),
-    desc: "Финский формат для крупногабаритных грузов и нестандартной упаковки.",
-    features: ["Усиленная конструкция", "До 2000 кг нагрузки", "Сухая, обработанная древесина"],
+    desc: "Фінський формат для великогабаритних вантажів і нестандартної упаковки.",
+    features: ["Посилена конструкція", "До 2000 кг навантаження", "Суха, оброблена деревина"],
   },
   {
     img: plasticImg,
-    tag: "Гигиена · Долговечность",
+    tag: "Гігієна · Довговічність",
     title: (
       <>
-        Пластиковые <span className="italic-display">ящики</span>
+        Пластикові <span className="italic-display">ящики</span>
       </>
     ),
-    desc: "Прочные пластиковые ящики для пищевых, фармацевтических и складских задач.",
-    features: ["Многоразовое использование", "Лёгкая мойка", "Различные размеры"],
+    desc: "Міцні пластикові ящики для харчових, фармацевтичних і складських задач.",
+    features: ["Багаторазове використання", "Легке миття", "Різні розміри"],
   },
   {
     img: bananaImg,
-    tag: "Лёгкие · Вместительные",
+    tag: "Легкі · Місткі",
     title: (
       <>
-        Банановые <span className="italic-display">ящики</span>
+        Бананові <span className="italic-display">ящики</span>
       </>
     ),
-    desc: "Картонные ящики из-под бананов — экономичное решение для переезда и хранения.",
-    features: ["Прочный двойной картон", "Удобные ручки", "Большой объём"],
+    desc: "Картонні ящики з-під бананів — економічне рішення для переїзду та зберігання.",
+    features: ["Міцний подвійний картон", "Зручні ручки", "Великий об'єм"],
   },
 ];
 
@@ -76,13 +78,13 @@ function ProductsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Каталог продукции"
+        eyebrow="Каталог продукції"
         title={
           <>
-            Поддоны и ящики <span className="italic-display">премиум-уровня</span>
+            Піддони та ящики <span className="italic-display">преміум-рівня</span>
           </>
         }
-        description="Полный ассортимент для логистики, торговли и частных заказов. Розница и опт."
+        description="Повний асортимент для логістики, торгівлі та приватних замовлень. Роздріб і опт."
       />
 
       <section className="pb-28">
@@ -122,12 +124,12 @@ function ProductsPage() {
                   ))}
                 </ul>
                 <div className="flex flex-wrap items-center gap-6">
-                  <span className="text-sm text-muted-foreground">Цена по запросу</span>
+                  <span className="text-sm text-muted-foreground">Ціна за запитом</span>
                   <Link
                     to="/contacts"
                     className="inline-flex items-center px-7 py-3 border border-[var(--gold)]/60 text-[var(--gold)] text-xs tracking-[0.3em] uppercase hover:bg-[var(--gold)] hover:text-primary-foreground transition-all"
                   >
-                    Узнать цену
+                    Дізнатися ціну
                   </Link>
                 </div>
               </div>
