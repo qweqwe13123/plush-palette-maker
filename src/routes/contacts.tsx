@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { User, Phone, Mail, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { toast } from "sonner";
 
 export const Route = createFileRoute("/contacts")({
   head: () => ({
@@ -25,18 +23,6 @@ export const Route = createFileRoute("/contacts")({
 });
 
 function ContactsPage() {
-  const [sending, setSending] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      toast.success("Дякуємо! Ми зв'яжемося з вами протягом дня.");
-      (e.target as HTMLFormElement).reset();
-    }, 800);
-  };
-
   return (
     <>
       <PageHeader
@@ -50,80 +36,49 @@ function ContactsPage() {
       />
 
       <section className="pb-28">
-        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-8">
-          {/* Info column */}
-          <div className="space-y-6">
-            <ContactCard eyebrow="Керівник">
-              <div className="flex items-center gap-3 text-lg">
-                <User size={18} className="text-[var(--gold)]" />
-                Мавлюд Ісаєв
-              </div>
-              <a
-                href="tel:+380974922539"
-                className="flex items-center gap-3 text-foreground hover:text-[var(--gold)] mt-3"
-              >
-                <Phone size={16} className="text-[var(--gold)]" />
-                +380 97 492 2539
-              </a>
-            </ContactCard>
+        <div className="mx-auto max-w-3xl px-6 space-y-6">
+          <ContactCard eyebrow="Керівник">
+            <div className="flex items-center gap-3 text-lg">
+              <User size={18} className="text-[var(--gold)]" />
+              Мавлуд Ісаєв
+            </div>
+            <a
+              href="tel:+380974922539"
+              className="flex items-center gap-3 text-foreground hover:text-[var(--gold)] mt-3"
+            >
+              <Phone size={16} className="text-[var(--gold)]" />
+              +380 97 492 2539
+            </a>
+          </ContactCard>
 
-            <ContactCard eyebrow="Електронна пошта">
-              <a
-                href="mailto:poddony.dp@gmail.com"
-                className="flex items-center gap-3 hover:text-[var(--gold)]"
-              >
-                <Mail size={16} className="text-[var(--gold)]" />
-                poddony.dp@gmail.com
-              </a>
-              <a
-                href="mailto:mavlud.isaev@ukr.net"
-                className="flex items-center gap-3 hover:text-[var(--gold)] mt-3"
-              >
-                <Mail size={16} className="text-[var(--gold)]" />
-                mavlud.isaev@ukr.net
-              </a>
-            </ContactCard>
+          <ContactCard eyebrow="Електронна пошта">
+            <a
+              href="mailto:poddony.dp@gmail.com"
+              className="flex items-center gap-3 hover:text-[var(--gold)]"
+            >
+              <Mail size={16} className="text-[var(--gold)]" />
+              poddony.dp@gmail.com
+            </a>
+            <a
+              href="mailto:mavlud.isaev@ukr.net"
+              className="flex items-center gap-3 hover:text-[var(--gold)] mt-3"
+            >
+              <Mail size={16} className="text-[var(--gold)]" />
+              mavlud.isaev@ukr.net
+            </a>
+          </ContactCard>
 
-            <ContactCard eyebrow="Місцезнаходження">
-              <div className="flex items-start gap-3">
-                <MapPin size={16} className="text-[var(--gold)] mt-1" />
-                <div>
-                  <div className="text-lg font-display">Дніпро</div>
-                  <div className="text-sm text-muted-foreground mt-1">
-                    Дніпропетровська область, Україна
-                  </div>
+          <ContactCard eyebrow="Місцезнаходження">
+            <div className="flex items-start gap-3">
+              <MapPin size={16} className="text-[var(--gold)] mt-1" />
+              <div>
+                <div className="text-lg font-display">Дніпро</div>
+                <div className="text-sm text-muted-foreground mt-1">
+                  Дніпропетровська область, Україна
                 </div>
               </div>
-            </ContactCard>
-          </div>
-
-          {/* Form */}
-          <div className="bg-card border border-border/60 p-8 md:p-10">
-            <div className="eyebrow mb-4">Залишити заявку</div>
-            <h2 className="font-display text-3xl md:text-4xl leading-tight mb-8">
-              Напишіть нам — <span className="italic-display">відповімо протягом дня</span>
-            </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <Field label="Ім'я" name="name" type="text" required />
-                <Field label="Телефон" name="phone" type="tel" required />
-              </div>
-              <Field
-                label="Повідомлення"
-                name="message"
-                textarea
-                placeholder="Які піддони чи ящики вас цікавлять, обсяг, терміни..."
-              />
-              <button
-                type="submit"
-                disabled={sending}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase shadow-[var(--shadow-gold)] disabled:opacity-60"
-              >
-                {sending ? "Надсилання..." : "Надіслати"}
-              </button>
-            </form>
-          </div>
+            </div>
+          </ContactCard>
         </div>
       </section>
     </>
