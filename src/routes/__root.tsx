@@ -43,6 +43,13 @@ export const Route = createRootRoute({
       { property: "og:site_name", content: "Піддони.dp" },
       { property: "og:locale", content: "uk_UA" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
+      { name: "twitter:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
+      { name: "description", content: "Luxury Palette Studio — це веб-сайт, що представляє компанію, її продукцію та послуги." },
+      { property: "og:description", content: "Luxury Palette Studio — це веб-сайт, що представляє компанію, її продукцію та послуги." },
+      { name: "twitter:description", content: "Luxury Palette Studio — це веб-сайт, що представляє компанію, її продукцію та послуги." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0e38a0d8-f3aa-456d-bb84-c5f3a98d3778/id-preview-e4c6ccea--5fe3c0c3-70fd-4bc1-84f3-423449322209.lovable.app-1776773371699.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0e38a0d8-f3aa-456d-bb84-c5f3a98d3778/id-preview-e4c6ccea--5fe3c0c3-70fd-4bc1-84f3-423449322209.lovable.app-1776773371699.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
