@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoMark from "@/assets/logo-mark.png";
 
 const links = [
-  { to: "/", label: "Главная" },
-  { to: "/products", label: "Продукция" },
-  { to: "/cooperation", label: "Сотрудничество" },
-  { to: "/contacts", label: "Контакты" },
+  { to: "/", label: "Головна" },
+  { to: "/products", label: "Продукція" },
+  { to: "/cooperation", label: "Співпраця" },
+  { to: "/contacts", label: "Контакти" },
 ] as const;
 
 export function SiteHeader() {
@@ -16,12 +17,16 @@ export function SiteHeader() {
     <header className="absolute top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 flex items-center justify-center rounded-sm bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground font-display text-xl">
-            P
-          </div>
+          <img
+            src={logoMark}
+            alt="Піддони.dp"
+            width={44}
+            height={44}
+            className="w-11 h-11 object-contain drop-shadow-[0_2px_8px_rgba(201,168,76,0.35)]"
+          />
           <div className="leading-tight">
-            <div className="font-display text-lg text-foreground">
-              Поддоны<span className="italic-display">.dp</span>
+            <div className="font-display text-lg text-foreground tracking-wide">
+              Піддони<span className="italic-display">.dp</span>
             </div>
             <div className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase">
               Premium · Dnipro
@@ -51,7 +56,7 @@ export function SiteHeader() {
             to="/contacts"
             className="hidden sm:inline-flex items-center justify-center px-6 py-3 border border-[var(--gold)]/40 text-[var(--gold)] text-xs tracking-[0.25em] uppercase hover:bg-[var(--gold)] hover:text-primary-foreground transition-all"
           >
-            Заказать
+            Замовити
           </Link>
           <button
             className="lg:hidden text-foreground p-2"

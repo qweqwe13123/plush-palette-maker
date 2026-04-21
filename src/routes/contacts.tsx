@@ -7,16 +7,18 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contacts")({
   head: () => ({
     meta: [
-      { title: "Контакты — Поддоны.dp" },
+      { title: "Контакти — Піддони.dp" },
       {
         name: "description",
-        content: "Свяжитесь с нами: +380 97 492 2539, poddony.dp@gmail.com. Днепр, Украина.",
+        content: "Зв'яжіться з нами: +380 97 492 2539, poddony.dp@gmail.com. Дніпро, Україна.",
       },
-      { property: "og:title", content: "Контакты — Поддоны.dp" },
+      { property: "og:title", content: "Контакти — Піддони.dp" },
       {
         property: "og:description",
-        content: "Мы всегда на связи и готовы рассчитать стоимость и подготовить отгрузку.",
+        content: "Ми завжди на зв'язку та готові розрахувати вартість і підготувати відвантаження.",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
     ],
   }),
   component: ContactsPage,
@@ -30,7 +32,7 @@ function ContactsPage() {
     setSending(true);
     setTimeout(() => {
       setSending(false);
-      toast.success("Спасибо! Мы свяжемся с вами в течение дня.");
+      toast.success("Дякуємо! Ми зв'яжемося з вами протягом дня.");
       (e.target as HTMLFormElement).reset();
     }, 800);
   };
@@ -38,23 +40,23 @@ function ContactsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Контакты"
+        eyebrow="Контакти"
         title={
           <>
-            Свяжитесь <span className="italic-display">с нами</span>
+            Зв'яжіться <span className="italic-display">з нами</span>
           </>
         }
-        description="Мы всегда на связи и готовы рассчитать стоимость, согласовать сроки и подготовить отгрузку."
+        description="Ми завжди на зв'язку та готові розрахувати вартість, узгодити терміни і підготувати відвантаження."
       />
 
       <section className="pb-28">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-8">
           {/* Info column */}
           <div className="space-y-6">
-            <ContactCard eyebrow="Руководитель">
+            <ContactCard eyebrow="Керівник">
               <div className="flex items-center gap-3 text-lg">
                 <User size={18} className="text-[var(--gold)]" />
-                Мавлюд Исаев
+                Мавлюд Ісаєв
               </div>
               <a
                 href="tel:+380974922539"
@@ -65,7 +67,7 @@ function ContactsPage() {
               </a>
             </ContactCard>
 
-            <ContactCard eyebrow="Электронная почта">
+            <ContactCard eyebrow="Електронна пошта">
               <a
                 href="mailto:poddony.dp@gmail.com"
                 className="flex items-center gap-3 hover:text-[var(--gold)]"
@@ -82,13 +84,13 @@ function ContactsPage() {
               </a>
             </ContactCard>
 
-            <ContactCard eyebrow="Местоположение">
+            <ContactCard eyebrow="Місцезнаходження">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[var(--gold)] mt-1" />
                 <div>
-                  <div className="text-lg font-display">Днепр</div>
+                  <div className="text-lg font-display">Дніпро</div>
                   <div className="text-sm text-muted-foreground mt-1">
-                    Днепропетровская область, Украина
+                    Дніпропетровська область, Україна
                   </div>
                 </div>
               </div>
@@ -97,28 +99,28 @@ function ContactsPage() {
 
           {/* Form */}
           <div className="bg-card border border-border/60 p-8 md:p-10">
-            <div className="eyebrow mb-4">Оставить заявку</div>
+            <div className="eyebrow mb-4">Залишити заявку</div>
             <h2 className="font-display text-3xl md:text-4xl leading-tight mb-8">
-              Напишите нам — <span className="italic-display">ответим в течение дня</span>
+              Напишіть нам — <span className="italic-display">відповімо протягом дня</span>
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
-                <Field label="Имя" name="name" type="text" required />
+                <Field label="Ім'я" name="name" type="text" required />
                 <Field label="Телефон" name="phone" type="tel" required />
               </div>
               <Field
-                label="Сообщение"
+                label="Повідомлення"
                 name="message"
                 textarea
-                placeholder="Какие поддоны или ящики вас интересуют, объём, сроки..."
+                placeholder="Які піддони чи ящики вас цікавлять, обсяг, терміни..."
               />
               <button
                 type="submit"
                 disabled={sending}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase shadow-[var(--shadow-gold)] disabled:opacity-60"
               >
-                {sending ? "Отправка..." : "Отправить"}
+                {sending ? "Надсилання..." : "Надіслати"}
               </button>
             </form>
           </div>
