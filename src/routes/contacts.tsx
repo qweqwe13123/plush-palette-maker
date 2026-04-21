@@ -23,18 +23,6 @@ export const Route = createFileRoute("/contacts")({
 });
 
 function ContactsPage() {
-  const [sending, setSending] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      toast.success("Дякуємо! Ми зв'яжемося з вами протягом дня.");
-      (e.target as HTMLFormElement).reset();
-    }, 800);
-  };
-
   return (
     <>
       <PageHeader
