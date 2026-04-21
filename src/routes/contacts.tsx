@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { User, Phone, Mail, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { toast } from "sonner";
 
 export const Route = createFileRoute("/contacts")({
   head: () => ({
