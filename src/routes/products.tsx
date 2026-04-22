@@ -5,27 +5,27 @@ import euroImg from "@/assets/product-euro.jpg";
 import finImg from "@/assets/product-fin.jpg";
 import plasticImg from "@/assets/product-plastic.jpg";
 import bananaImg from "@/assets/product-banana.jpg";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "Продукція — Піддони.dp" },
-      {
-        name: "description",
-        content:
-          "Дерев'яні піддони 1200×800 та 1200×1000, пластикові ящики, бананові ящики. Повний асортимент.",
-      },
-      { property: "og:title", content: "Продукція — Піддони.dp" },
-      {
-        property: "og:description",
-        content: "Повний асортимент піддонів і ящиків для логістики, торгівлі та приватних замовлень.",
-      },
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-    ],
-  }),
   component: ProductsPage,
 });
+
+const pageMeta = [
+  { title: "Продукція — Піддони.dp" },
+  {
+    name: "description",
+    content:
+      "Дерев'яні піддони 1200×800 та 1200×1000, пластикові ящики, бананові ящики. Повний асортимент.",
+  },
+  { property: "og:title", content: "Продукція — Піддони.dp" },
+  {
+    property: "og:description",
+    content: "Повний асортимент піддонів і ящиків для логістики, торгівлі та приватних замовлень.",
+  },
+  { property: "og:image", content: "/og-image.jpg" },
+  { name: "twitter:image", content: "/og-image.jpg" },
+];
 
 const products = [
   {
@@ -75,6 +75,7 @@ const products = [
 ];
 
 function ProductsPage() {
+  usePageMeta(pageMeta);
   return (
     <>
       <PageHeader

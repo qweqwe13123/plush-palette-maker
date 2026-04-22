@@ -1,28 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { User, Phone, Mail, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/contacts")({
-  head: () => ({
-    meta: [
-      { title: "Контакти — Піддони.dp" },
-      {
-        name: "description",
-        content: "Зв'яжіться з нами: +380 97 492 2539, poddony.dp@gmail.com. Дніпро, Україна.",
-      },
-      { property: "og:title", content: "Контакти — Піддони.dp" },
-      {
-        property: "og:description",
-        content: "Ми завжди на зв'язку та готові розрахувати вартість і підготувати відвантаження.",
-      },
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-    ],
-  }),
   component: ContactsPage,
 });
 
+const pageMeta = [
+  { title: "Контакти — Піддони.dp" },
+  {
+    name: "description",
+    content: "Зв'яжіться з нами: +380 97 492 2539, poddony.dp@gmail.com. Дніпро, Україна.",
+  },
+  { property: "og:title", content: "Контакти — Піддони.dp" },
+  {
+    property: "og:description",
+    content: "Ми завжди на зв'язку та готові розрахувати вартість і підготувати відвантаження.",
+  },
+  { property: "og:image", content: "/og-image.jpg" },
+  { name: "twitter:image", content: "/og-image.jpg" },
+];
+
 function ContactsPage() {
+  usePageMeta(pageMeta);
   return (
     <>
       <PageHeader
