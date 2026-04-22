@@ -1,39 +1,7 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
-
-type MetaTag = {
-  title?: string;
-  name?: string;
-  property?: string;
-  content?: string;
-};
-
-function applyMeta(meta: MetaTag[]) {
-  meta.forEach((m) => {
-    if (m.title) {
-      document.title = m.title;
-      return;
-    }
-    if (!m.content) return;
-    const selector = m.name
-      ? `meta[name="${m.name}"]`
-      : m.property
-        ? `meta[property="${m.property}"]`
-        : null;
-    if (!selector) return;
-    let el = document.head.querySelector<HTMLMetaElement>(selector);
-    if (!el) {
-      el = document.createElement("meta");
-      if (m.name) el.setAttribute("name", m.name);
-      if (m.property) el.setAttribute("property", m.property);
-      document.head.appendChild(el);
-    }
-    el.setAttribute("content", m.content);
-  });
-}
 
 function NotFoundComponent() {
   return (
@@ -74,6 +42,3 @@ export const Route = createRootRoute({
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-// Apply per-route meta tags client-side (since this is a SPA build).
-export { applyMeta };
