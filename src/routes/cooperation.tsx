@@ -1,27 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Wallet, Clock, Users, Hammer, Phone } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/cooperation")({
-  head: () => ({
-    meta: [
-      { title: "Співпраця — Піддони.dp" },
-      {
-        name: "description",
-        content:
-          "Відкриті вакансії та B2B-партнерство. Ремонт дерев'яних піддонів у Дніпрі, оптові постачання.",
-      },
-      { property: "og:title", content: "Співпраця — Піддони.dp" },
-      {
-        property: "og:description",
-        content: "Приєднуйтесь до нашої команди або станьте оптовим партнером.",
-      },
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-    ],
-  }),
   component: CooperationPage,
 });
+
+const pageMeta = [
+  { title: "Співпраця — Піддони.dp" },
+  {
+    name: "description",
+    content:
+      "Відкриті вакансії та B2B-партнерство. Ремонт дерев'яних піддонів у Дніпрі, оптові постачання.",
+  },
+  { property: "og:title", content: "Співпраця — Піддони.dp" },
+  {
+    property: "og:description",
+    content: "Приєднуйтесь до нашої команди або станьте оптовим партнером.",
+  },
+  { property: "og:image", content: "/og-image.jpg" },
+  { name: "twitter:image", content: "/og-image.jpg" },
+];
 
 const perks = [
   {
@@ -47,6 +47,7 @@ const perks = [
 ];
 
 function CooperationPage() {
+  usePageMeta(pageMeta);
   return (
     <>
       <PageHeader

@@ -56,6 +56,7 @@ const products = [
 ];
 
 function HomePage() {
+  usePageMeta(pageMeta);
   return (
     <>
       {/* HERO */}
