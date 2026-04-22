@@ -4,27 +4,27 @@ import heroImg from "@/assets/hero-pallets.jpg";
 import euroImg from "@/assets/product-euro.jpg";
 import plasticImg from "@/assets/product-plastic.jpg";
 import bananaImg from "@/assets/product-banana.jpg";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Піддони.dp — Преміум піддони у Дніпрі" },
-      {
-        name: "description",
-        content:
-          "Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Бездоганна репутація з 2015 року.",
-      },
-      { property: "og:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
-      {
-        property: "og:description",
-        content: "Роздрібні та оптові постачання піддонів і ящиків по всій Україні.",
-      },
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-    ],
-  }),
   component: HomePage,
 });
+
+const pageMeta = [
+  { title: "Піддони.dp — Преміум піддони у Дніпрі" },
+  {
+    name: "description",
+    content:
+      "Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Бездоганна репутація з 2015 року.",
+  },
+  { property: "og:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
+  {
+    property: "og:description",
+    content: "Роздрібні та оптові постачання піддонів і ящиків по всій Україні.",
+  },
+  { property: "og:image", content: "/og-image.jpg" },
+  { name: "twitter:image", content: "/og-image.jpg" },
+];
 
 const advantages = [
   {
