@@ -27,8 +27,9 @@ type ContactPerson = {
   role: string;
   phone: string;
   phoneDisplay: string;
-  whatsapp: string; // digits only, no +
-  telegram: string; // digits only, no +
+  whatsapp?: string; // digits only, no +
+  telegram?: string; // digits only, no +
+  viber?: string; // digits with +
 };
 
 const people: ContactPerson[] = [
@@ -39,6 +40,7 @@ const people: ContactPerson[] = [
     phoneDisplay: "+380 97 492 25 39",
     whatsapp: "380974922539",
     telegram: "380974922539",
+    viber: "+380974922539",
   },
   {
     name: "Севда Ісаєва",
@@ -47,6 +49,7 @@ const people: ContactPerson[] = [
     phoneDisplay: "+380 68 669 21 68",
     whatsapp: "380686692168",
     telegram: "380686692168",
+    viber: "+380686692168",
   },
   {
     name: "Ільяз Ісаєв",
@@ -54,7 +57,6 @@ const people: ContactPerson[] = [
     phone: "+380668022091",
     phoneDisplay: "+380 66 802 20 91",
     whatsapp: "380668022091",
-    telegram: "380668022091",
   },
 ];
 
@@ -88,26 +90,40 @@ function ContactsPage() {
                 {p.phoneDisplay}
               </a>
               <div className="flex flex-wrap gap-3 mt-5">
-                <a
-                  href={`https://wa.me/${p.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`WhatsApp ${p.name}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
-                >
-                  <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                  WhatsApp
-                </a>
-                <a
-                  href={`https://t.me/+${p.telegram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Telegram ${p.name}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
-                >
-                  <TelegramIcon className="w-4 h-4 text-[#229ED9]" />
-                  Telegram
-                </a>
+                {p.whatsapp && (
+                  <a
+                    href={`https://wa.me/${p.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`WhatsApp ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    WhatsApp
+                  </a>
+                )}
+                {p.viber && (
+                  <a
+                    href={`viber://chat?number=${encodeURIComponent(p.viber)}`}
+                    aria-label={`Viber ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <ViberIcon className="w-4 h-4 text-[#7360F2]" />
+                    Viber
+                  </a>
+                )}
+                {p.telegram && (
+                  <a
+                    href={`https://t.me/+${p.telegram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Telegram ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <TelegramIcon className="w-4 h-4 text-[#229ED9]" />
+                    Telegram
+                  </a>
+                )}
               </div>
             </ContactCard>
           ))}
@@ -177,6 +193,19 @@ function TelegramIcon({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+    </svg>
+  );
+}
+
+function ViberIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M11.4 0C9.473.028 5.333.344 3.018 2.467 1.297 4.187.693 6.7.63 9.82c-.06 3.11-.13 8.95 5.5 10.541v2.42s-.038.97.602 1.17c.79.25 1.24-.5 1.99-1.3l1.4-1.58c3.85.32 6.81-.42 7.15-.53.78-.25 5.2-.82 5.92-6.69.74-6.05-.36-9.87-2.34-11.6l-.01-.01C20.24 1.66 17.27.04 10.61 0M3.5 14.62c-.45-1.27-.65-2.79-.7-4.21-.05-3.1.5-5.13 1.83-6.5 1.93-1.78 5.49-2.05 7.1-2.07 5.6.02 8.06 1.36 9.31 2.5 1.7 1.43 2.55 4.85 1.93 9.83-.59 4.9-4.18 5.21-4.84 5.42-.28.09-2.86.74-6.13.52 0 0-2.43 2.94-3.19 3.71-.12.12-.26.17-.35.15-.13-.04-.16-.19-.16-.41l.02-4.04C2.92 18.18 3.5 14.62 3.5 14.62m9.74-9.65c-.34-.01-.34.51 0 .52 2.6.02 4.74 1.79 4.76 5.04 0 .35.52.35.52 0v-.01c-.03-3.5-2.36-5.53-5.28-5.55m3.42 4.6c-.01.34.51.36.52.01.04-1.96-1.19-3.57-3.5-3.74-.34-.02-.38.5-.04.52 2 .14 3.06 1.49 3.02 3.21M16 12.4c-.45-.25-.91-.09-1.1.16l-.4.51c-.2.25-.58.22-.58.22-2.78-.71-3.52-3.52-3.52-3.52s-.03-.39.22-.58l.51-.4c.25-.19.41-.65.16-1.1-.66-1.16-1.11-1.56-1.34-1.87-.24-.3-.6-.36-.97-.16h-.01c-.77.43-1.62 1.27-1.34 2.13.46 1.45 1.16 4.49 4.04 6.79 1.35 1.08 3.5 2.19 4.41 2.45h.01c.85.28 1.69-.57 2.12-1.34v-.01c.2-.37.14-.73-.16-.97-.31-.23-.71-.68-1.87-1.34M14.7 7.66c1.1.06 1.62.62 1.67 1.77.02.34.55.32.53-.02-.06-1.5-.85-2.34-2.19-2.41-.34-.03-.36.49-.01.51"/>
     </svg>
   );
 }
