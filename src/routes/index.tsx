@@ -15,7 +15,7 @@ const pageMeta = [
   {
     name: "description",
     content:
-      "Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Бездоганна репутація з 2015 року.",
+      "Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Виготовляємо піддони будь-якого розміру під замовлення.",
   },
   { property: "og:title", content: "Піддони.dp — Преміум піддони у Дніпрі" },
   {
@@ -73,15 +73,18 @@ function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-32 w-full">
           <div className="max-w-2xl">
-            <div className="eyebrow mb-8">· Піддони · Дніпро · з 2015 ·</div>
+            <div className="eyebrow mb-8">· Піддони · Дніпро · Premium ·</div>
             <h1 className="font-display text-6xl md:text-8xl leading-[1.02] mb-8">
               Піддони
               <br />
               преміум <span className="italic-display">класу</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-xl mb-6 leading-relaxed">
               Дерев'яні піддони 1200×800 та 1200×1000, пластикові й бананові ящики. Роздрібні та
               оптові постачання з бездоганною репутацією.
+            </p>
+            <p className="text-sm text-[var(--gold)] tracking-[0.15em] uppercase mb-10">
+              Виготовляємо піддони будь-якого розміру під замовлення
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
