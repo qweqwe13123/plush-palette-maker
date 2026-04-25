@@ -90,26 +90,40 @@ function ContactsPage() {
                 {p.phoneDisplay}
               </a>
               <div className="flex flex-wrap gap-3 mt-5">
-                <a
-                  href={`https://wa.me/${p.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`WhatsApp ${p.name}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
-                >
-                  <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
-                  WhatsApp
-                </a>
-                <a
-                  href={`https://t.me/+${p.telegram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Telegram ${p.name}`}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
-                >
-                  <TelegramIcon className="w-4 h-4 text-[#229ED9]" />
-                  Telegram
-                </a>
+                {p.whatsapp && (
+                  <a
+                    href={`https://wa.me/${p.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`WhatsApp ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
+                    WhatsApp
+                  </a>
+                )}
+                {p.viber && (
+                  <a
+                    href={`viber://chat?number=${encodeURIComponent(p.viber)}`}
+                    aria-label={`Viber ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <ViberIcon className="w-4 h-4 text-[#7360F2]" />
+                    Viber
+                  </a>
+                )}
+                {p.telegram && (
+                  <a
+                    href={`https://t.me/+${p.telegram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Telegram ${p.name}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
+                  >
+                    <TelegramIcon className="w-4 h-4 text-[#229ED9]" />
+                    Telegram
+                  </a>
+                )}
               </div>
             </ContactCard>
           ))}
