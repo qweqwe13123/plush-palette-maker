@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import euroImg from "@/assets/product-euro.jpg";
+import euroImg from "@/assets/product-pallet-luxury.jpg";
 import finImg from "@/assets/product-fin.jpg";
 import plasticImg from "@/assets/product-plastic.jpg";
-import bananaImg from "@/assets/product-banana.jpg";
+import bananaImg from "@/assets/product-banana-luxury.jpg";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/products")({
