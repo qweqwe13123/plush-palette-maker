@@ -25,8 +25,8 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Дерев'яні та пластикові піддони, бананові ящики. Роздріб і опт по всій Україні з 2015
-            року.
+            Дерев'яні та пластикові піддони, бананові ящики. Роздріб і опт по всій Україні.
+            Виготовляємо піддони будь-якого розміру під замовлення.
           </p>
         </div>
 
@@ -66,6 +66,16 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
+              <a href="tel:+380686692168" className="hover:text-[var(--gold)]">
+                +380 68 669 21 68 — Севда Ісаєва
+              </a>
+            </li>
+            <li>
+              <a href="tel:+380668022091" className="hover:text-[var(--gold)]">
+                +380 66 802 20 91 — Ільяз Ісаєв
+              </a>
+            </li>
+            <li>
               <a href="mailto:poddony.dp@gmail.com" className="hover:text-[var(--gold)]">
                 poddony.dp@gmail.com
               </a>
@@ -77,7 +87,7 @@ export function SiteFooter() {
       <div className="border-t border-border/40">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} Піддони.dp. Усі права захищені.</div>
-          <div className="tracking-[0.2em] uppercase">Premium quality since 2015</div>
+          <div className="tracking-[0.2em] uppercase">Premium quality</div>
         </div>
       </div>
     </footer>
