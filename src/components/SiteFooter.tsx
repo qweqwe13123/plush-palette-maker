@@ -62,7 +62,7 @@ export function SiteFooter() {
             <li>Дніпро, Україна</li>
             <li>
               <a href="tel:+380974922539" className="hover:text-[var(--gold)]">
-                +380 97 492 2539
+                +380 97 492 25 39 — Мавлуд Ісаєв
               </a>
             </li>
             <li>
