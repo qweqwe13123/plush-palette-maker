@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Truck, Wrench, Package } from "lucide-react";
 import heroImg from "@/assets/hero-pallets.jpg";
-import euroImg from "@/assets/product-pallet-luxury.png";
+import euroImg from "@/assets/product-pallet-luxury.jpg";
 import plasticImg from "@/assets/product-plastic.jpg";
-import bananaImg from "@/assets/product-banana-luxury.png";
+import bananaImg from "@/assets/product-banana-luxury.jpg";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 export const Route = createFileRoute("/")({
