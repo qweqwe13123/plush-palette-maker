@@ -27,8 +27,9 @@ type ContactPerson = {
   role: string;
   phone: string;
   phoneDisplay: string;
-  whatsapp: string; // digits only, no +
-  telegram: string; // digits only, no +
+  whatsapp?: string; // digits only, no +
+  telegram?: string; // digits only, no +
+  viber?: string; // digits with +
 };
 
 const people: ContactPerson[] = [
@@ -39,6 +40,7 @@ const people: ContactPerson[] = [
     phoneDisplay: "+380 97 492 25 39",
     whatsapp: "380974922539",
     telegram: "380974922539",
+    viber: "+380974922539",
   },
   {
     name: "Севда Ісаєва",
@@ -47,6 +49,7 @@ const people: ContactPerson[] = [
     phoneDisplay: "+380 68 669 21 68",
     whatsapp: "380686692168",
     telegram: "380686692168",
+    viber: "+380686692168",
   },
   {
     name: "Ільяз Ісаєв",
@@ -54,7 +57,6 @@ const people: ContactPerson[] = [
     phone: "+380668022091",
     phoneDisplay: "+380 66 802 20 91",
     whatsapp: "380668022091",
-    telegram: "380668022091",
   },
 ];
 
