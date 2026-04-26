@@ -43,20 +43,10 @@ const people: ContactPerson[] = [
     viber: "+380974922539",
   },
   {
-    name: "Севда Ісаєва",
-    role: "Менеджер",
-    phone: "+380686692168",
-    phoneDisplay: "+380 68 669 21 68",
-    whatsapp: "380686692168",
-    telegram: "380686692168",
-    viber: "+380686692168",
-  },
-  {
     name: "Ільяз Ісаєв",
     role: "Менеджер",
     phone: "+380668022091",
     phoneDisplay: "+380 66 802 20 91",
-    whatsapp: "380668022091",
   },
 ];
 

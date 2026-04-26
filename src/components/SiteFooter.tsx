@@ -66,11 +66,6 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href="tel:+380686692168" className="hover:text-[var(--gold)]">
-                +380 68 669 21 68 — Севда Ісаєва
-              </a>
-            </li>
-            <li>
               <a href="tel:+380668022091" className="hover:text-[var(--gold)]">
                 +380 66 802 20 91 — Ільяз Ісаєв
               </a>
