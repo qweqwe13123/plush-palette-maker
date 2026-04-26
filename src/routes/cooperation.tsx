@@ -97,7 +97,7 @@ function CooperationPage() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:+380974922539"
+                href="tel:+380686692168"
                 className="inline-flex items-center gap-3 px-7 py-3 bg-gradient-to-br from-[var(--gold-soft)] to-[var(--gold)] text-primary-foreground text-xs tracking-[0.3em] uppercase"
               >
                 <Phone size={14} /> Зателефонувати

@@ -36,11 +36,11 @@ const people: ContactPerson[] = [
   {
     name: "Мавлуд Ісаєв",
     role: "Керівник",
-    phone: "+380974922539",
-    phoneDisplay: "+380 97 492 25 39",
-    whatsapp: "380974922539",
-    telegram: "380974922539",
-    viber: "+380974922539",
+    phone: "+380686692168",
+    phoneDisplay: "+380 68 669 21 68",
+    whatsapp: "380686692168",
+    telegram: "380686692168",
+    viber: "+380686692168",
   },
   {
     name: "Ільяз Ісаєв",
