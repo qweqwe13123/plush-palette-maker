@@ -34,11 +34,11 @@ type ContactPerson = {
 const people: ContactPerson[] = [
   {
     role: "Керівник",
-    phone: "+380686692168",
-    phoneDisplay: "+380 68 669 21 68",
-    whatsapp: "380686692168",
-    telegram: "380686692168",
-    viber: "+380686692168",
+    phone: "+380974922539",
+    phoneDisplay: "+380 97 492 25 39",
+    whatsapp: "380974922539",
+    telegram: "380974922539",
+    viber: "+380974922539",
   },
   {
     role: "Менеджер",
@@ -118,6 +118,13 @@ function ContactsPage() {
             >
               <Mail size={16} className="text-[var(--gold)]" />
               poddony.dp@gmail.com
+            </a>
+            <a
+              href="mailto:mavlud.isaev@ukr.net"
+              className="flex items-center gap-3 hover:text-[var(--gold)] mt-3"
+            >
+              <Mail size={16} className="text-[var(--gold)]" />
+              mavlud.isaev@ukr.net
             </a>
           </ContactCard>
 

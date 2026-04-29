@@ -61,8 +61,8 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Дніпро, Україна</li>
             <li>
-              <a href="tel:+380686692168" className="hover:text-[var(--gold)]">
-                +380 68 669 21 68
+              <a href="tel:+380974922539" className="hover:text-[var(--gold)]">
+                +380 97 492 25 39
               </a>
             </li>
             <li>
