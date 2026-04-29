@@ -36,9 +36,9 @@ const people: ContactPerson[] = [
     role: "Керівник",
     phone: "+380974922539",
     phoneDisplay: "+380 97 492 25 39",
-    whatsapp: "380974922539",
+    whatsapp: "380686692168",
     telegram: "380974922539",
-    viber: "+380974922539",
+    viber: "+380686692168",
   },
   {
     role: "Менеджер",
