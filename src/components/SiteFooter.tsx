@@ -75,6 +75,11 @@ export function SiteFooter() {
                 poddony.dp@gmail.com
               </a>
             </li>
+            <li>
+              <a href="mailto:mavlud.isaev@ukr.net" className="hover:text-[var(--gold)]">
+                mavlud.isaev@ukr.net
+              </a>
+            </li>
           </ul>
         </div>
       </div>
