@@ -23,7 +23,6 @@ const pageMeta = [
 ];
 
 type ContactPerson = {
-  name: string;
   role: string;
   phone: string;
   phoneDisplay: string;
@@ -34,7 +33,6 @@ type ContactPerson = {
 
 const people: ContactPerson[] = [
   {
-    name: "Мавлуд Ісаєв",
     role: "Керівник",
     phone: "+380686692168",
     phoneDisplay: "+380 68 669 21 68",
@@ -43,7 +41,6 @@ const people: ContactPerson[] = [
     viber: "+380686692168",
   },
   {
-    name: "Ільяз Ісаєв",
     role: "Менеджер",
     phone: "+380668022091",
     phoneDisplay: "+380 66 802 20 91",
@@ -68,13 +65,9 @@ function ContactsPage() {
         <div className="mx-auto max-w-3xl px-6 space-y-6">
           {people.map((p) => (
             <ContactCard key={p.phone} eyebrow={p.role}>
-              <div className="flex items-center gap-3 text-lg">
-                <User size={18} className="text-[var(--gold)]" />
-                {p.name}
-              </div>
               <a
                 href={`tel:${p.phone}`}
-                className="flex items-center gap-3 text-foreground hover:text-[var(--gold)] mt-3"
+                className="flex items-center gap-3 text-foreground hover:text-[var(--gold)]"
               >
                 <Phone size={16} className="text-[var(--gold)]" />
                 {p.phoneDisplay}
@@ -85,7 +78,7 @@ function ContactsPage() {
                     href={`https://wa.me/${p.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`WhatsApp ${p.name}`}
+                    aria-label="WhatsApp"
                     className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
                   >
                     <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
@@ -95,7 +88,7 @@ function ContactsPage() {
                 {p.viber && (
                   <a
                     href={`viber://chat?number=${encodeURIComponent(p.viber)}`}
-                    aria-label={`Viber ${p.name}`}
+                    aria-label="Viber"
                     className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
                   >
                     <ViberIcon className="w-4 h-4 text-[#7360F2]" />
@@ -107,7 +100,7 @@ function ContactsPage() {
                     href={`https://t.me/+${p.telegram}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Telegram ${p.name}`}
+                    aria-label="Telegram"
                     className="inline-flex items-center gap-2 px-4 py-2 border border-border/60 hover:border-[var(--gold)]/60 text-xs tracking-[0.25em] uppercase transition-colors"
                   >
                     <TelegramIcon className="w-4 h-4 text-[#229ED9]" />
@@ -125,13 +118,6 @@ function ContactsPage() {
             >
               <Mail size={16} className="text-[var(--gold)]" />
               poddony.dp@gmail.com
-            </a>
-            <a
-              href="mailto:mavlud.isaev@ukr.net"
-              className="flex items-center gap-3 hover:text-[var(--gold)] mt-3"
-            >
-              <Mail size={16} className="text-[var(--gold)]" />
-              mavlud.isaev@ukr.net
             </a>
           </ContactCard>
 
